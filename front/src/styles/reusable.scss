@@ -1,3 +1,110 @@
-.ml-1 {
-    margin-left: 1rem;
+.flex-row {
+    flex-direction: row !important;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.truncate {
+    width: 90% !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-radio {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem 0;
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid #000;
+        border-radius: 50%;
+        background-color: #fff;
+        position: relative;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+    
+    input[type="radio"]:checked::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1.3rem;
+        height: 1.3rem;
+        background-color: #000;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    label {
+        color: #ccc;
+    }
+}
+
+.custom-button {
+    border: 1px solid white;
+    color: #bbb;
+    background-color: #333;
+    padding: 0.75rem 2.5rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 2%;
+
+    &:hover {
+        background: linear-gradient(to right, #f17f0d, #ed861e, #f3c623);
+        color: #fff;
+    }
+}
+
+.popup-button-container {
+    position: relative;
+    display: inline-block;
+
+    .custom-button {
+        padding: 0.25rem 4rem;
+    }
+      
+    .popup {
+        width: 200px;
+        padding: 0.25rem 0;
+        position: absolute;
+        bottom: calc(100% + 1rem);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        z-index: 100;
+    
+        button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0.25rem 0.75rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: left;
+            text-transform: uppercase;
+    
+            &:hover {
+                color: #ed861e;
+            }
+        }
+    }
 }

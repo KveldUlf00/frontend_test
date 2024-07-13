@@ -55,10 +55,10 @@
             border-radius: 50%;
             padding: 1rem 1rem 2rem 1rem;
             background-color: #555;
+            cursor: pointer;
 
             &:hover {
                 background-color: #d98532;
-                cursor: pointer;
                 transition: .2s;
             }
         }
@@ -78,5 +78,60 @@
             height: 3rem;
         }
 
+    }
+
+    &__footer {
+        padding: 0.5rem 2rem 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .cssDiv {
+            width: 4.25rem;
+            height: 4.25rem;
+            padding: 2px 2px;
+            border: 1px solid #333;
+            display: flex;
+            flex-wrap: wrap;
+            cursor: pointer;
+            color: #333;
+            font-size: 1.125rem;
+
+            &:hover {
+                border-color: #d98532;
+                color: #ccc;
+                transition: .2s;
+            }
+
+            span {
+                width: 100%;
+                text-transform: uppercase;
+            }
+        }
+
+        .company-name {
+            width: 15%;
+            position: relative;
+            text-align: center;
+            margin: 20px 0;
+        }
+          
+        .company-name::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            border-top: 1px solid #333;
+            z-index: 1;
+        }
+          
+        .company-name span {
+            background-color: #111;
+            padding: 0 0.75rem;
+            position: relative;
+            color: #333;
+            z-index: 2;
+        }
     }
 }
