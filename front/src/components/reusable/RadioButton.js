@@ -1,6 +1,6 @@
 const RadioButton = ({ label, value, onChange, isChecked }) => {
   return (
-    <div>
+    <div className="custom-radio">
       <input
         type="radio"
         id={`id_${value}`}
