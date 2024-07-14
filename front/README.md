@@ -47,7 +47,7 @@ maybe it will be also usefull:
 - Button in the footer ("show") to eject the frame without using JS.
   > Not done :(
 - Upload the result of the work to preview on some free platform (e.g. netlify/heroku).
-  > Not done :(
+  > Not done, but I tried...
 
 I also didn't make "exercice for 6" however I know how to do that... But Euro final...
 
