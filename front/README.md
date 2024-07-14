@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Welcome in my project!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi! My name is Błażej Raducki. I just defended my master's degree at Wroclaw University of Technology, hence I lacked a little time to finalize everything you recommended ;) I think I would have tackled all the tasks, and the ones I managed to do I checked carefully (at the bottom I will describe what I did). Due to the upcoming Euro finals and from what I understood the deadline for tomorrow morning (i.e. 14.07) I leave the project as it is.
 
-## Available Scripts
+# How to run project
 
-In the project directory, you can run:
+### `npm run start`
 
-### `npm start`
+maybe it will be also usefull:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `npm install`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## My Node and Npm version
 
-### `npm test`
+### `Node: 18.17.1`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Npm: 6.14.4`
 
-### `npm run build`
+## Implemented
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- All main aims (there is a chance that I misunderstood any of the commands, which I am able to clarify)
+- I made JSON file called "messages" (front\src\data\messages.json)
+- I didn't use any bootstrap
+- I made whole styling in scss
+- I made my project responsive
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Additional advantages:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Embedding the entire task in some JS framework (preferably Angular).
+  > Done in React
+- No image files in the final design (no jpg, gif, png, svg type files).
+  > Not done :( I'm wondering how You made this HTML5 logo without png
+- CSS IS AWESOME in the footer - when the mouse hovers, the frame (without text) should do an animated rotation.
+  > Done
+- Application of BEM.
+  > When it was convenient for me I used
+- Meeting the rules of a11y.
+  > I cautioned
+- Logical use of rem, em, vh, vw units (in effect, as little use of px unit as possible) - in such a way that responsiveness is met with as little code as possible.
+  > Done, sometimes there are px but only low value
+- Mobile first.
+- When docking content, make the content alphabetically sorted in the last block.
+- When pasting the content, if the condition for it to be unique cannot be met, display an appropriate message (e.g. alert/dialog/modal).
+  > Done with notistack
+- Button in the footer ("show") to eject the frame without using JS.
+  > Not done :(
+- Upload the result of the work to preview on some free platform (e.g. netlify/heroku).
+  > Not done :(
 
-### `npm run eject`
+I also didn't make "exercice for 6" however I know how to do that... But Euro final...
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Comments
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I tried my best to reproduce the design from the graphics, but a "skilled eye" will probably pick up minor differences, for which I apologize.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Finally, some more thoughts occurred to me:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- I should write colors as variables
+- use Angular instead of React, you would probably look at me more pleasantly ;)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**if something is not clear to you then let me know via email raduckib@gmail.com, I will be happy to answer all your questions :)**
