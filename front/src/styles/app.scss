@@ -1,11 +1,10 @@
 .container {
     background-color: #111;
+    color: #fff;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-
-    color: #fff;
 
     &__main {
         background-color: #30353d;
@@ -24,14 +23,14 @@
             p {
                 font-size: 2rem;
                 position: relative;
-                display: inline-block; /* Ensures the width is only as wide as the text */
+                display: inline-block;
             }
             p::after {
                 content: "";
                 display: block;
-                width: 90%; /* 90% of the text length */
-                border-bottom: 1px solid white; /* White line, 1px solid */
-                margin: 15px auto 0; /* Adds some space above the line */
+                width: 90%;
+                border-bottom: 1px solid white;
+                margin: 15px auto 0;
             }
         }
 
@@ -48,14 +47,14 @@
     }
 
     &__header, &__footer {
-        min-height: 4rem;
+        display: flex;
+        justify-content: space-between;
         background-color: #111;
     }
 
     &__header {
+        min-height: 4rem;
         padding: 1rem 2rem;
-        display: flex;
-        justify-content: space-between;
 
         .logo {
             border-radius: 50%;
@@ -88,9 +87,8 @@
     }
 
     &__footer {
+        min-height: 5rem;
         padding: 0.5rem 2rem 1rem 2rem;
-        display: flex;
-        justify-content: space-between;
         align-items: center;
 
         .footer_block {
@@ -104,23 +102,48 @@
         .cssDiv {
             width: 4.25rem;
             height: 4.25rem;
-            padding: 2px 2px;
-            border: 1px solid #333;
+            padding: 2px;
             display: flex;
             flex-wrap: wrap;
             cursor: pointer;
             color: #333;
             font-size: 1.125rem;
-
-            &:hover {
-                border-color: #d98532;
-                color: #ccc;
-                transition: .2s;
+            position: relative;
+          
+            .border {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 1px solid #333;
+                transition: border-color .2s, transform .4s;
+                pointer-events: none;
             }
-
+          
+            &:hover .border {
+                border-color: #d98532;
+                transform: rotate(360deg);
+            }
+          
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+                pointer-events: none;
+            }
+          
             span {
                 width: 100%;
-                text-transform: uppercase;
+                text-align: center;
+            }
+          
+            &:hover {
+                color: #ccc;
             }
         }
 
@@ -157,7 +180,7 @@
     .container {
         &__main {
             .block {
-                height: calc(75%/2);
+                height: calc(75% / 2);
             }
 
             .first_block, .second_block {
@@ -203,7 +226,7 @@
 
         &__footer {
             .footer_block {
-                width: calc(100%/2);
+                width: calc(100% / 2);
             }
 
             .company-name {

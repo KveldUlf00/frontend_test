@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const RadioButton = ({ label, value, onChange, isChecked }) => {
   return (
     <div className="custom-radio">
@@ -11,6 +13,13 @@ const RadioButton = ({ label, value, onChange, isChecked }) => {
       <label htmlFor={value}>{label}</label>
     </div>
   );
+};
+
+RadioButton.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  isChecked: PropTypes.bool.isRequired,
 };
 
 export default RadioButton;

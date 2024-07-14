@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { useSnackbar } from "notistack";
 
 import FirstBlock from "./blocks/FirstBlock";
 import SecondBlock from "./blocks/SecondBlock";
 import ThirdBlock from "./blocks/ThirdBlock";
 import content from "../data/content.json";
+import messages from "../data/messages.json";
 
 const Main = ({ setShowName, isTextToReset, setIsTextToReset }) => {
   const [loremData, setLoremData] = useState([]);
   const [text, setText] = useState([]);
   const [usedLoremIndexes, setUsedLoremIndexes] = useState([]);
-  const [selectedRadioValue, setselectedRadioValue] = useState("option1");
+  const [selectedRadioValue, setSelectedRadioValue] = useState("option1");
+
+  const { enqueueSnackbar } = useSnackbar();
 
   const resetTextAndProperties = () => {
     setUsedLoremIndexes([0]);
-    setselectedRadioValue("option1");
+    setSelectedRadioValue("option1");
   };
 
   const getChosenLorem = () => {
@@ -37,37 +42,39 @@ const Main = ({ setShowName, isTextToReset, setIsTextToReset }) => {
 
   const onGlueBtn = () => {
     if (usedLoremIndexes.length === 6) {
-      alert("Już wszystkie możliwe teksty zostały doklejone!");
+      enqueueSnackbar(messages.allTextsUsed, {
+        variant: "error",
+      });
       return;
-    }
-
-    if (selectedRadioValue === "option1" && usedLoremIndexes.includes(0)) {
-      alert("Tekst pierwszy już znajduje się w trzecim bloku, wybierz inny.");
+    } else if (
+      selectedRadioValue === "option1" &&
+      usedLoremIndexes.includes(0)
+    ) {
+      enqueueSnackbar(messages.firstTextInThirdBlock, {
+        variant: "error",
+      });
       return;
     } else if (
       selectedRadioValue === "option2" &&
       usedLoremIndexes.includes(1)
     ) {
-      alert("Tekst drugi już znajduje się w trzecim bloku, wybierz inny.");
+      enqueueSnackbar(messages.secondTextInThirdBlock, {
+        variant: "error",
+      });
       return;
     } else if (
       selectedRadioValue === "option3" &&
       [2, 3, 4, 5].every((index) => usedLoremIndexes.includes(index))
     ) {
-      alert(
-        "Teksty trzy, cztery, pięć i sześć już znajdują się w trzecim bloku, wybierz inny."
-      );
+      enqueueSnackbar(messages.allRandomTextUsed, {
+        variant: "error",
+      });
       return;
     }
 
     const usedIndex = getChosenLorem();
 
     if (
-      usedLoremIndexes.includes(usedIndex) &&
-      selectedRadioValue !== "option3"
-    ) {
-      alert("Tekst już się znajduje w trzecim bloku!");
-    } else if (
       usedLoremIndexes.includes(usedIndex) &&
       selectedRadioValue === "option3"
     ) {
@@ -82,7 +89,7 @@ const Main = ({ setShowName, isTextToReset, setIsTextToReset }) => {
       .sort((a, b) => a - b)
       .map((usedLoremIndex) => loremData[usedLoremIndex]);
     setText(chosenText);
-  }, [usedLoremIndexes]);
+  }, [loremData, usedLoremIndexes]);
 
   useEffect(() => {
     if (isTextToReset) {
@@ -90,7 +97,7 @@ const Main = ({ setShowName, isTextToReset, setIsTextToReset }) => {
       setIsTextToReset(false);
       setShowName(false);
     }
-  }, [isTextToReset]);
+  }, [isTextToReset, setIsTextToReset, setShowName]);
 
   useEffect(() => {
     if ("texts" in content && content.texts.length > 0) {
@@ -106,7 +113,7 @@ const Main = ({ setShowName, isTextToReset, setIsTextToReset }) => {
       </div>
       <FirstBlock
         selectedRadioValue={selectedRadioValue}
-        setselectedRadioValue={setselectedRadioValue}
+        setSelectedRadioValue={setSelectedRadioValue}
       />
       <SecondBlock onReplaceBtn={onReplaceBtn} onGlueBtn={onGlueBtn} />
       <ThirdBlock text={text} />
@@ -114,4 +121,9 @@ const Main = ({ setShowName, isTextToReset, setIsTextToReset }) => {
   );
 };
 
+Main.propTypes = {
+  setShowName: PropTypes.func.isRequired,
+  isTextToReset: PropTypes.bool.isRequired,
+  setIsTextToReset: PropTypes.func.isRequired,
+};
 export default Main;

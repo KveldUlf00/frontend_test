@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const ThirdBlock = ({ text }) => {
   const veryLongTitle =
     "Blok z długą nazwą która sama się przytnie kiedy będzie trzeba to zrobi to co trzeba kmwtw";
@@ -12,6 +14,10 @@ const ThirdBlock = ({ text }) => {
       </div>
     </div>
   );
+};
+
+ThirdBlock.propTypes = {
+  text: PropTypes.array.isRequired,
 };
 
 export default ThirdBlock;
