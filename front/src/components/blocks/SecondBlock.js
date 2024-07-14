@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import Button from "../reusable/Button";
 
 const SecondBlock = ({ onReplaceBtn, onGlueBtn }) => {
@@ -10,6 +12,11 @@ const SecondBlock = ({ onReplaceBtn, onGlueBtn }) => {
       </div>
     </div>
   );
+};
+
+SecondBlock.propTypes = {
+  onReplaceBtn: PropTypes.func.isRequired,
+  onGlueBtn: PropTypes.func.isRequired,
 };
 
 export default SecondBlock;

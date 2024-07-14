@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
+import PropTypes from "prop-types";
 
 const PopupButton = ({ options, onSelect }) => {
   const [showPopup, setShowPopup] = useState(false);
   const buttonRef = useRef(null);
 
   const togglePopup = () => {
-    setShowPopup(!showPopup);
+    setShowPopup((origin) => !origin);
   };
 
   const handleOptionClick = (option) => {
@@ -26,11 +27,15 @@ const PopupButton = ({ options, onSelect }) => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
+  // At first I used ChevronDown and ChevronUp, but I found out that ChevronUp is bugged and after clicking it
+  // the togglePopup do nothing. When I changed it to double ChevronDown everything is fine. That's why i used only
+  // ChevronDown icon
   return (
     <div className="popup-button-container" ref={buttonRef}>
       <button className="custom-button" onClick={togglePopup}>
         <span className="flex-center">
-          Pokaż {showPopup ? <ChevronDown /> : <ChevronUp />}
+          Pokaż <ChevronDown className={!showPopup && "rotated"} />
         </span>
       </button>
       {showPopup && (
@@ -48,6 +53,11 @@ const PopupButton = ({ options, onSelect }) => {
       )}
     </div>
   );
+};
+
+PopupButton.propTypes = {
+  options: PropTypes.array.isRequired,
+  onSelect: PropTypes.func.isRequired,
 };
 
 export default PopupButton;

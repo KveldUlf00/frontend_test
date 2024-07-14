@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import HTML5 from "../icons/html5.png";
 
 const Header = ({ showName }) => {
@@ -16,6 +18,10 @@ const Header = ({ showName }) => {
       </div>
     </div>
   );
+};
+
+Header.propTypes = {
+  showName: PropTypes.bool.isRequired,
 };
 
 export default Header;

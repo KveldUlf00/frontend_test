@@ -1,8 +1,10 @@
+import PropTypes from "prop-types";
+
 import RadioButton from "../reusable/RadioButton";
 
-const FirstBlock = ({ selectedRadioValue, setselectedRadioValue }) => {
+const FirstBlock = ({ selectedRadioValue, setSelectedRadioValue }) => {
   const handleRadioChange = (value) => {
-    setselectedRadioValue(value);
+    setSelectedRadioValue(value);
   };
 
   const options = [
@@ -27,6 +29,11 @@ const FirstBlock = ({ selectedRadioValue, setselectedRadioValue }) => {
       </div>
     </div>
   );
+};
+
+FirstBlock.propTypes = {
+  selectedRadioValue: PropTypes.string.isRequired,
+  setSelectedRadioValue: PropTypes.func.isRequired,
 };
 
 export default FirstBlock;
