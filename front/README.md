@@ -1,6 +1,6 @@
 # Welcome in my project!
 
-Hi! My name is Błażej Raducki. I just defended my master's degree at Wroclaw University of Technology, hence I lacked a little time to finalize everything you recommended ;) I think I would have tackled all the tasks, and the ones I managed to do I checked carefully (at the bottom I will describe what I did). Due to the upcoming Euro finals and from what I understood the deadline for tomorrow morning (i.e. 14.07) I leave the project as it is.
+Hi! My name is Błażej Raducki. I just defended my master's degree at Wroclaw University of Technology, hence I lacked a little time to finalize everything you recommended ;) I think I would have tackled all the tasks, and the ones I managed to do I checked carefully (at the bottom I will describe what I did). Due to the upcoming Euro finals and from what I understood the deadline for tomorrow morning (i.e. 15.07) I leave the project as it is.
 
 # How to run project
 
@@ -39,7 +39,9 @@ maybe it will be also usefull:
 - Logical use of rem, em, vh, vw units (in effect, as little use of px unit as possible) - in such a way that responsiveness is met with as little code as possible.
   > Done, sometimes there are px but only low value
 - Mobile first.
+  > Done
 - When docking content, make the content alphabetically sorted in the last block.
+  > Done
 - When pasting the content, if the condition for it to be unique cannot be met, display an appropriate message (e.g. alert/dialog/modal).
   > Done with notistack
 - Button in the footer ("show") to eject the frame without using JS.
