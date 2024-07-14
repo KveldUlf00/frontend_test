@@ -6,7 +6,7 @@ const Header = ({ showName }) => {
   return (
     <div className="container__header">
       <div className="logo">
-        <a href="/" className="logo-link">
+        <a href="/">
           <img src={HTML5} className="icon" alt="HTML5 logo" />
         </a>
       </div>
