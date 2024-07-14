@@ -1,9 +1,6 @@
-import React, { useState } from "react";
 import RadioButton from "../reusable/RadioButton";
 
-const FirstBlock = () => {
-  const [selectedRadioValue, setselectedRadioValue] = useState("option1");
-
+const FirstBlock = ({ selectedRadioValue, setselectedRadioValue }) => {
   const handleRadioChange = (value) => {
     setselectedRadioValue(value);
   };

@@ -55,8 +55,8 @@
     border: 1px solid white;
     color: #bbb;
     background-color: #333;
-    padding: 0.75rem 2.5rem;
-    font-size: 0.75rem;
+    padding: 1rem 3rem;
+    font-size: 0.875rem;
     cursor: pointer;
     transition: background 0.3s;
     text-transform: uppercase;
@@ -107,4 +107,21 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 768px) {
+    .custom-button {
+        padding: 1rem 2rem;
+        font-size: 0.75rem;
+    }
+
+    .popup-button-container {
+        .popup {
+            left: 40%;
+        }
+
+        .custom-button {
+            padding: 0.25rem 2rem;
+        }
+    }    
 }

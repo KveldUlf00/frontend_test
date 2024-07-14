@@ -1,18 +1,10 @@
 import Button from "../reusable/Button";
 
-const SecondBlock = () => {
-  const onReplaceBtn = () => {
-    console.log("Zastąp!");
-  };
-
-  const onGlueBtn = () => {
-    console.log("Doklej!");
-  };
-
+const SecondBlock = ({ onReplaceBtn, onGlueBtn }) => {
   return (
-    <div className="block first_block">
+    <div className="block second_block">
       <span className="block__title">Blok drugi</span>
-      <div className="block__content flex-row">
+      <div className="block__content">
         <Button label="Zastąp" onClick={onReplaceBtn} />
         <Button label="Doklej" onClick={onGlueBtn} />
       </div>

@@ -35,9 +35,15 @@
             }
         }
 
-        .first_block, .second_block, .third_block {
+        .block {
             width: calc(100% / 3);
-            height: auto;
+            height: 75%;
+        }
+
+        .second_block {
+            .block__content {
+                flex-direction: row;
+            }
         }
     }
 
@@ -68,6 +74,7 @@
             flex-direction: column;
             font-size: 1.5rem;
             text-align: right;
+            justify-content: center;
 
             span:nth-child(2) {
                 color: #ccc;
@@ -85,6 +92,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .footer_block {
+            width: calc(100%/3);
+        }
+
+        .footer_block:nth-last-child(1) {
+            text-align: right;
+        }
 
         .cssDiv {
             width: 4.25rem;
@@ -110,10 +125,10 @@
         }
 
         .company-name {
-            width: 15%;
+            width: 12rem;
             position: relative;
             text-align: center;
-            margin: 20px 0;
+            margin: 20px auto;
         }
           
         .company-name::before {
@@ -131,7 +146,69 @@
             padding: 0 0.75rem;
             position: relative;
             color: #333;
+            font-size: 1.5rem;
             z-index: 2;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1180px) {
+    .container {
+        &__main {
+            .block {
+                height: calc(75%/2);
+            }
+
+            .first_block, .second_block {
+                width: calc(100% / 2);
+            }
+
+            .third_block {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .second_block {
+        .block__content {
+            flex-direction: column !important;
+            align-items: center;
+
+            button {
+                margin-bottom: 1rem;
+                max-width: 75%;
+            }
+        }
+    }
+    
+    .container {
+        &__header {
+            .description {
+                font-size: 1.25rem;
+            }
+        }
+
+        &__main {
+            .headline {
+                height: 20%;
+            }
+
+            .block {
+                height: 40%;
+            }
+        }
+
+        &__footer {
+            .footer_block {
+                width: calc(100%/2);
+            }
+
+            .company-name {
+                display: none;
+            }
         }
     }
 }
